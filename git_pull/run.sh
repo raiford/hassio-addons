@@ -141,9 +141,9 @@ function validate-config {
 
 #### Main program ####
 cd /config || { echo "[Error] Failed to cd into /config"; exit 1; }
+setup-user-password
 while true; do
     check-ssh-key
-    setup-user-password
     git-synchronize
     validate-config
      # do we repeat?
